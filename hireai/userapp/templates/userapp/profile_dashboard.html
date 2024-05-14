@@ -1,0 +1,18 @@
+
+{% if candidate_details %}
+    <h1>Candidate Profile</h1>
+    <h3>Name:</h3>{{ candidate_details.name }}
+    <h3>Email:</h3>{{ candidate_details.email }}
+    <h3>Age:</h3>{{ candidate_details.age }}
+    <h3>Exp:</h3>{{ candidate_details.exp }}
+    <h3>Skills:</h3>{{ candidate_details.skills }}
+    <h3>Technologies:</h3>{{ candidate_details.technologies }}
+    <h3>Domain:</h3>{{ candidate_details.domain }}
+    <h3>Resume:</h3>{{ candidate_details.resume_link }}
+    <a href="{% url 'edit_user_profile' user_id=candidate_details.candidate_id %}">edit_user_profile</a>
+{% else %}
+    <a href="{% url 'create_user_profile' %}">create_user_profile</a>
+
+{% endif %}
+
+

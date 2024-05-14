@@ -1,8 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Candidate(models.Model):
+class CandidateDetails(models.Model):
     """
     Model to store user information.
     
@@ -17,6 +18,7 @@ class Candidate(models.Model):
         technologies (list of str): A list of technologies the candidate is familiar with.
         resume_link (str): The URL to the candidate's resume.
     """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     candidate_id = models.AutoField(primary_key=True) 
     name = models.CharField(max_length=100)
     email = models.EmailField()

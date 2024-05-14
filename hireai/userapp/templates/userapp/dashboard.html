@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <h2>The job posts will show here</h2>
+    <!-- {% if user_profile %}
+        <h2>User Details</h2>
+        <p><strong>Name:</strong> {{ user_profile.name }}</p>
+        <p><strong>Email:</strong> {{ user_profile.email }}</p>
+        <p><strong>Age:</strong> {{ user_profile.age }}</p>
+        <p><strong>Experience:</strong> {{ user_profile.exp }} years</p>
+        <p><strong>Domain:</strong> {{ user_profile.domain }}</p>
+        <p><strong>Skills:</strong> {{ user_profile.skills }}</p>
+        <p><strong>Technologies:</strong> {{ user_profile.technologies }}</p>
+        <p><strong>Resume:</strong> <a href="{{ user_profile.resume_link }}">Download Resume</a></p>
+        <a href="{% url 'edit_user_profile' user_profile.candidate_id %}">Edit Profile</a>
+    {% else %}
+        <p>No user profile found. <a href="{% url 'create_user_profile' %}">Create Profile</a></p>
+
+    {% endif %} -->
+    <h3>go to profile </h3>
+    <a href="{% url 'profile_dashboard' %}" class="">Go to Profile</a>
+    
+</body>
+</html>
