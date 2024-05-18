@@ -22,6 +22,8 @@ class CandidateDetails(models.Model):
     candidate_id = models.AutoField(primary_key=True) 
     name = models.CharField(max_length=100)
     email = models.EmailField()
+    phone = models.CharField(max_length=15, blank=True, null=True)
+    education = models.CharField(max_length=100, blank=True)  # Optional field
     age = models.PositiveIntegerField()
     exp = models.PositiveIntegerField()
     domain = models.CharField(max_length=100)

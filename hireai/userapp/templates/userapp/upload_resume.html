@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume</title>
+</head>
+<body>
+    <h1>Upload Your Resume</h1>
+    <div class="">
+        <h4 class="mb-4">Apply For The Job</h4>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row g-3">
+                
+                <div class="mb-3 col-12 col-sm-6">
+                    <label for="pdfFile" class="form-label">Resume in any format</label>
+                    <input type="file" class="form-control" name="pdf_file" id="pdfFile" accept=".pdf">
+                    <button type="submit" value="Submit" class="btn btn-primary mt-3">Submit</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

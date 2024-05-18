@@ -1,15 +1,55 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'userapp/css/sign_style.css' %}">
     <title>Sign Up</title>
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign Up</button>
-    </form>
+    <div class="container">
+        <div class="wrapper">
+          <div class="title"><span>User Sign up</span></div>
+          <form action="" method="post">
+              {% csrf_token %}
+
+            <p>Username</p>
+            <div class="row">
+              <i class="fas fa-user"></i>
+              {{ form.username }}
+              <!-- <input type="text" placeholder="Username" name="username" required> -->
+            </div>
+
+            <p>Password</p>
+            <div class="row">
+              <i class="fas fa-lock"></i>
+              {{ form.password1 }}
+              <!-- <input type="password" placeholder="Password" name="password" required> -->
+            </div>
+            <p>Confirm Passoword</p>
+            <div class="row">
+                <i class="fas fa-lock"></i>
+                {{ form.password2 }}
+  
+                <!-- <input type="password" placeholder="Password" name="password" required> -->
+              </div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- <div class="pass"><a href="#">Forgot password?</a></div> -->
+            <div class="row button">
+              <input type="submit" value="Sign Up">
+            </div>
+            <div class="signup-link">already a member ? <a href="{% url 'signin' %}">Login now</a></div>
+            <div class="signup-link">I am a Admin ? <a href="{% url 'admin_sign_in' %}">Sign in</a></div>
+            
+        </form>
+        </div>
+      </div>
 </body>
 </html>
