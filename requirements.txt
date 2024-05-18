@@ -1,2 +1,7 @@
 mysqlclient
 python-dotenv
+langchain==0.1.16
+langchain-community==0.0.32
+unstructured[all-docs]
+langchain-groq==0.1.1
+firebase-admin
