@@ -8,7 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import login, authenticate
 from .models import CandidateDetails
 from .forms import UserProfileForm
-from llm.llm_chains import get_user_detials
+from llm.llm_chains import get_user_detials,get_score
+from llm.helper import get_resume_content
 import os
 import firebase_admin
 from firebase_admin import credentials, storage
@@ -127,9 +128,38 @@ def job_list(request):
 
 def job_detail(request,id):
     job = JobPosting.objects.get(id=id)
-    responsibilities_list = job.responsibilities.split('\n')
+    user = request.user
+    print(f"user printing from job_datail: {user}")
+    c_details = CandidateDetails.objects.get(user=user)
+    resume_content = c_details.resume_content
+    print(f"resume_content printing from job_datail: {resume_content}")
 
-    return render(request,'userapp/job-detail.html',{'job':job,'responsibilities_list':responsibilities_list})
+
+    responsibilities_list = job.responsibilities.split('\n')
+    requirements_list = job.requirements.split('\n')
+    job_description = job.job_description
+    job_responsibilities = job.responsibilities
+    job_requirements = job.requirements
+
+    # Concatenating the strings with their labels
+    Combined_Job_Description = (
+        f"Job Description:\n {job_description}\n"
+        f"Job Responsibilities:\n {job_responsibilities}\n"
+        f"Job Requirements:\n {job_requirements}"
+    )
+    
+
+    
+    print(f"JD printing from job_datail: {Combined_Job_Description}")
+    score,explanation,missing,summary =get_score(resume_content,Combined_Job_Description)
+    score_dic = {
+        'score':score,
+        'explanation':explanation,
+        'missing':missing,
+        'summary':summary
+    }
+
+    return render(request,'userapp/job-detail.html',{'job':job,'responsibilities_list':responsibilities_list,'requirements_list':requirements_list,'score_dic':score_dic})
 
 def contact(request):
     return render(request, 'userapp/contact.html')
@@ -151,6 +181,7 @@ def create_user_profile(request):
     skills = request.session.get('skills')
     technologies = request.session.get('technologies')
     resume_url = request.session.get('resume_url')
+    resume_content = request.session.get('resume_content')
     extracted_data = {
         'name':name,
         'email':email,
@@ -187,7 +218,8 @@ def create_user_profile(request):
                 skills=skills,
                 technologies=technologies,
                 resume_link = resume_url,
-                user= request.user
+                user= request.user,
+                resume_content = resume_content
             )
 
             # candidate_details = candidate_details.save(commit=False)
@@ -275,8 +307,8 @@ def upload_resume(request):
         short_url = response.text
         print(short_url)
 
-        name,email,phone,education,skills,technologies = get_user_detials()
-        print(name,email,phone,education,skills,technologies)
+        resume_content,name,email,phone,education,skills,technologies = get_user_detials()
+        print(resume_content,name,email,phone,education,skills,technologies)
         
         # Delete the file from resume_path
         os.remove(os.path.join(resume_path, file.name))
@@ -297,6 +329,7 @@ def upload_resume(request):
         request.session['skills'] = skills
         request.session['technologies'] = technologies
         request.session['resume_url'] = short_url
+        request.session['resume_content'] = resume_content
         
         return JsonResponse({'success': True,  'download_link': download_url})
         

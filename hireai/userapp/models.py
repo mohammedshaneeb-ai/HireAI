@@ -30,6 +30,8 @@ class CandidateDetails(models.Model):
     skills = models.JSONField()  # List of strings
     technologies = models.JSONField()  # List of strings
     resume_link = models.URLField()
+    resume_content = models.TextField(blank=True, null=True)
+    
 
     def __str__(self):
         return self.name
