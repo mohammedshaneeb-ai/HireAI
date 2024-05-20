@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
+from llm.llm_chains import get_job_summary
 from .forms import CompanyProfileForm,JobPostingForm
 from .models import CompanyProfile,JobPosting
 # Create your views here.
@@ -104,7 +105,7 @@ def create_job_posting(request):
             job_posting = form.save(commit=False)
             job_posting.created_by = request.user
             job_posting.company_profile = CompanyProfile.objects.get(user=request.user)
-            job_posting.summary = generate_summary(job_posting.job_description)
+            job_posting.summary = get_job_summary(job_posting.job_description,job_posting.responsibilities,job_posting.requirements)
             job_posting.save()
             return redirect('admin_dashboard')  # Redirect to a view that lists job postings
     else:
@@ -118,7 +119,10 @@ def edit_job_posting(request,job_id):
     if request.method == 'POST':
         form = JobPostingForm(request.POST,instance=job)
         if form.is_valid():
-            form.save()
+            job_posting = form.save(commit=False)
+            job_posting.summary = get_job_summary(job_posting.job_description,job_posting.responsibilities,job_posting.requirements)
+            job_posting.save()
+            # form.save()
             return redirect('admin_dashboard')
     else:
         form = JobPostingForm(instance=job)

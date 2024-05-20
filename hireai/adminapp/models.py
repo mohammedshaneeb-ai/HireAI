@@ -19,6 +19,7 @@ class JobPosting(models.Model):
     title = models.CharField(max_length=255)
     job_description = models.TextField()
     responsibilities = models.TextField()
+    requirements = models.TextField(blank=True)
     location = models.CharField(max_length=255)
     domain = models.CharField(max_length=255)
     summary = models.TextField()

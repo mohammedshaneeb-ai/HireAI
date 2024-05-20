@@ -31,5 +31,5 @@ class CompanyProfileForm(forms.ModelForm):
 class JobPostingForm(forms.ModelForm):
     class Meta:
         model = JobPosting
-        fields = ['title', 'job_description', 'responsibilities', 'location', 'domain']
+        fields = ['title', 'job_description', 'responsibilities','requirements', 'location', 'domain']
 
