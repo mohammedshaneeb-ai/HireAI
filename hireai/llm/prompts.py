@@ -16,3 +16,20 @@ job_summarizer_template = """You are a good Summarizer.i will give you job descr
 CONCISE SUMMARY:"""
 
 
+
+jd_score_template = """
+you are a resume score calculator.I will give you resume content and job descriptoin. based on that please give me a score out of 100.
+you want to return the output in JSON format.
+
+Resume Content : {resume_content}
+Job Description : {job_description}
+
+I want to get out put in below JSON format:
+JSON output : 
+    'Score' : score you give,
+    'Explanation' : reason why you give this score,
+    'Missing': what are missing,
+    'Summary': summary
+
+
+"""
