@@ -1,6 +1,8 @@
 from django.db import models
 
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator, EmailValidator, URLValidator
+
 
 
 # Create your models here.
@@ -29,3 +31,24 @@ class JobPosting(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class JobApplication(models.Model):
+    job_id = models.CharField(max_length=50)
+    job_title = models.CharField(max_length=100)
+    candidate_name = models.CharField(max_length=100)
+    score = models.DecimalField(max_digits=5, decimal_places=2, validators=[MinValueValidator(0), MaxValueValidator(100)])
+    score_summary = models.TextField(null=True,blank=True)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField(validators=[EmailValidator])
+    experience = models.PositiveIntegerField(help_text="Experience in years")
+    age = models.PositiveIntegerField(validators=[MinValueValidator(10), MaxValueValidator(100)])
+    resume_link = models.URLField(validators=[URLValidator])
+    # skills = models.JSONField(help_text="List of skills")
+    # technologies = models.JSONField(help_text="List of technologies")
+    skills = models.TextField(null=True,blank=True)
+
+    def __str__(self):
+        return f'{self.job_title} - {self.candidate_name}'
+    
+    
