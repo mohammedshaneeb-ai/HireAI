@@ -21,7 +21,7 @@ import requests
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import json
-from adminapp.models import JobPosting,CompanyProfile
+from adminapp.models import JobPosting,CompanyProfile,JobApplication
 
 load_dotenv()
 app_directory = os.path.dirname(__file__)
@@ -158,6 +158,8 @@ def job_detail(request,id):
         'missing':missing,
         'summary':summary
     }
+    request.session['score_summary'] = summary
+    request.session['score'] = score
 
     return render(request,'userapp/job-detail.html',{'job':job,'responsibilities_list':responsibilities_list,'requirements_list':requirements_list,'score_dic':score_dic})
 
@@ -335,6 +337,56 @@ def upload_resume(request):
         
     else:
         return JsonResponse({'success': False, 'error': 'No file provided'})
+
+
+def submit_job(request,id):
+    if request.method == 'POST':
+        print("Submit job is working")
+        job = JobPosting.objects.get(id=id)
+        job_title = job.title
+        print(f"job title:{job_title}")
+        candidate_details = CandidateDetails.objects.get(user=request.user)
+        print(f"candidate name: {candidate_details.name}")
+        score_summary = request.session.get('score_summary')
+        score = request.session.get('score')
+        print(f"score and score summary : {score, score_summary}")
+
+        def convert_to_str(skills,technologies):
+            skills = json.loads(skills)
+            technologies = json.loads(technologies)
+            # joining
+            skills.extend(technologies)
+            # removing duplicates
+            skills_new = list(set(skills))
+            skills_new = ', '.join(skills_new)
+
+            print(f"Skills_new: {type(skills_new)}\n{skills_new}")
+            return skills_new
+        print(f"type:{type(candidate_details.skills)} {candidate_details.skills}")
+        skills = convert_to_str(candidate_details.skills,candidate_details.technologies)
+
+        job_application = JobApplication(
+            job_id = job.id,
+            job_title = job.title,
+            candidate_name = candidate_details.name,
+            score = score,
+            score_summary = score_summary,
+            phone = candidate_details.phone,
+            email = candidate_details.email,
+            experience = candidate_details.exp,
+            age = candidate_details.age,
+            resume_link = candidate_details.resume_link,
+            skills = skills
+            
+        )
+        
+        job_application.save()
+
+
+        return redirect('index')
+
+
+
 
 
 

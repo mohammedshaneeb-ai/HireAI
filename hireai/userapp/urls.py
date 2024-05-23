@@ -15,6 +15,7 @@ urlpatterns = [
     path('profile_dashboard/', views.profile_dashboard, name='profile_dashboard'),
     path('upload_resume/',views.upload_resume,name="upload_resume"),
     path("job-detail/<int:id>/",views.job_detail, name='job_detail'),
+    path('submit_job/<int:id>/',views.submit_job,name='submit_job')
 
     
     
