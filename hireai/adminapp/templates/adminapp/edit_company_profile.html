@@ -5,8 +5,8 @@
     <title>Edit Company Profile</title>
 </head>
 <body>
-    <h1>Edit User Profile</h1>
-    <form method="post">
+    <h1>Edit Company Profile</h1>
+    <form method="post",enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>

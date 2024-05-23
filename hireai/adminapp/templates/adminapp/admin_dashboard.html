@@ -152,6 +152,7 @@
                                         <div class="d-flex mb-3">
                                             <a class="btn btn-light btn-square me-3" href="{% url 'edit_job_posting' job_id=job.id %}"><i class="fa fa-edit text-primary"></i></a>
                                             <a class="btn btn-light btn-square me-3" href="{% url 'delete_job' job_id=job.id %}"><i class="fa fa-trash text-primary"></i></a>
+                                            <a href="{% url 'chat' job_id=job.id %}" class="nav-item nav-link">Chat</a>
                                             
                                         </div>
                                         <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date Line: {{job.date}}</small>
