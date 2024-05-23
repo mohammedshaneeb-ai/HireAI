@@ -1,7 +1,9 @@
 from langchain.prompts import PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
-from .prompts import template_resume_extraction,job_summarizer_template,jd_score_template
-from .llm_initializations import mixtral_llm
+from langchain.chains import create_sql_query_chain
+from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
+from .prompts import template_resume_extraction,job_summarizer_template,jd_score_template,sql_prompt
+from .llm_initializations import mixtral_llm,sql_llm
 from .helper import parse_data,get_resume_content
 import os
 import json
@@ -42,18 +44,20 @@ def get_score(resume_content,job_description):
     prompt = PromptTemplate.from_template(jd_score_template)
     chain = prompt | mixtral_llm | output_parser
     result = chain.invoke({"resume_content":resume_content,"job_description": job_description})
-    data = json.loads(result)
+    data = json.loads(result,strict=False)
     score=data['Score']
     explanation = data['Explanation']
     missing=data['Missing']
     summary=data['Summary']
     return score,explanation,missing,summary
 
-# if __name__ == '__main__':
-#     name,email,phone,education,skills,technologies = get_user_detials()
-#     print("Name:", name)
-#     print("Email:", email)
-#     print("Phone:", phone)
-#     print("Education",education)
-#     print("Skills:", skills)
-#     print("Technologies:", technologies)
+
+def get_sql_result(query,db):
+    project_name = 'Quering SQL Final'
+    os.environ["LANGCHAIN_PROJECT"] = f"Tracing Walkthrough - {project_name}"
+    execute_query = QuerySQLDataBaseTool(db=db)
+    write_query = create_sql_query_chain(sql_llm, db,sql_prompt)
+    chain = write_query | execute_query
+    result = chain.invoke({"question": query})
+    return result
+

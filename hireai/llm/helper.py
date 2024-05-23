@@ -1,4 +1,6 @@
 from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.utilities.sql_database import SQLDatabase
+
 import json
 from django.conf import settings
 import os
@@ -6,6 +8,11 @@ import os
 
 app_directory = os.path.dirname('../userapp')
 resume_path = os.path.join(app_directory, 'resumes')
+
+db_user = os.environ.get('DB_USER')
+db_password = os.environ.get('DB_PASSWORD')
+db_host = os.environ.get('DB_HOST')
+db_name = os.environ.get('DB_NAME')
 
 
 def get_user_resumes_path():
@@ -54,3 +61,4 @@ def parse_data(data_str):
         print("Error: Invalid JSON format")
 
     return name, email, phone, education,skills, technologies
+
