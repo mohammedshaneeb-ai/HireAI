@@ -114,6 +114,13 @@
                                
                                 {% endfor %}
                             </ul>
+
+                            <form id="job_form" method="POST" action="{% url 'submit_job' id=job.id %}">
+                                {% csrf_token %}
+                                <button type="submit" id="job_submit" class="btn btn-primary mb-4">Quick Apply</button>
+                            </form>
+                            
+
                         </div>
                         
         

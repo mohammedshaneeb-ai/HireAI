@@ -6,3 +6,10 @@ unstructured[all-docs]
 langchain-groq==0.1.1
 langsmith==0.1.52
 firebase-admin
+langchain_openai
+sentence-transformers==2.6.1
+faiss-cpu==1.8.0
+langchainhub==0.1.15
+pymysql
+pandasai
+pandasai[langchain]
