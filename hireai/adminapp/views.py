@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib import messages 
 
 from llm.llm_chains import get_job_summary
 from .forms import CompanyProfileForm,JobPostingForm
@@ -33,6 +34,10 @@ def admin_sign_up(request):
         if form.is_valid():
             form.save()
             return redirect('admin_sign_in')
+        else:
+            messages.error(request, form.errors)
+            return render(request, 'userapp/signup.html', {'form': form})
+
     else:
         form = AdminSignUpForm()
     return render(request, 'adminapp/admin-sign-up.html', {'form': form})
@@ -47,6 +52,8 @@ def admin_sign_in(request):
             if user is not None and user.is_staff:
                 login(request, user)
                 return redirect('admin_dashboard')  # Redirect to admin dashboard
+            else:
+                messages.error(request, 'Invalid username or password. Please try again.')
     else:
         form = AdminSignInForm()
     return render(request, 'adminapp/admin-sign-in.html', {'form': form})
@@ -69,7 +76,9 @@ def create_company_profile(request):
 def edit_company_profile(request,id):
     company_profile = CompanyProfile.objects.get(id=id)
     if request.method =='POST':
-        form = CompanyProfileForm(request.POST, instance=company_profile)
+        form = CompanyProfileForm(request.POST,request.FILES, instance=company_profile)
+        print(f"Form : {form}")
+
         if form.is_valid():
             form.save()
             return redirect('company_profile')
