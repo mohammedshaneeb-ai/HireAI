@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "userapp.apps.UserappConfig",
     "llm.apps.LlmConfig",
-    "adminapp.apps.AdminappConfig"
+    "adminapp.apps.AdminappConfig",
+    "chatapp.apps.ChatappConfig"
 ]
 
 MIDDLEWARE = [
