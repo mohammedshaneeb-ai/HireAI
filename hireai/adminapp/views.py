@@ -110,6 +110,7 @@ def admin_sign_in(request):
 
 
 @login_required
+@user_passes_test(lambda u: u.is_staff)
 def create_company_profile(request):
     """
     Handle the creation of a company profile by an admin user.
@@ -141,6 +142,8 @@ def create_company_profile(request):
 
     return render(request, 'adminapp/create_company_profile.html', {'form': form})
 
+@login_required
+@user_passes_test(lambda u: u.is_staff)
 def edit_company_profile(request,id):
     """
     Handle the editing of a company profile by an admin user.
@@ -175,6 +178,8 @@ def edit_company_profile(request,id):
         
 
 
+@login_required
+@user_passes_test(lambda u: u.is_staff)
 def company_profile(request):
     """
     Display the company profile for the logged-in staff user.
@@ -201,6 +206,7 @@ def company_profile(request):
 
 
 @login_required
+@user_passes_test(lambda u: u.is_staff)
 def create_job_posting(request):
     """
     Handle the creation of a job posting by a staff user.
@@ -234,6 +240,8 @@ def create_job_posting(request):
     return render(request, 'adminapp/create-job-posting.html', {'form': form})
 
 
+@login_required
+@user_passes_test(lambda u: u.is_staff)
 def edit_job_posting(request,job_id):
     """
     Handle the editing of a job posting by a staff user.
@@ -268,6 +276,8 @@ def edit_job_posting(request,job_id):
     return render(request,'adminapp/create-job-posting.html',{'form':form})
 
 
+@login_required
+@user_passes_test(lambda u: u.is_staff)
 def delete_job(request, job_id):
     """
     Handle the deletion of a job posting by a staff user.
@@ -297,6 +307,8 @@ def delete_job(request, job_id):
 
         
 
+@login_required
+@user_passes_test(lambda u: u.is_staff)
 def admin_logout(request):
     """
     Log out the admin user.
