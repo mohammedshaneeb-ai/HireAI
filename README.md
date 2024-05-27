@@ -1,5 +1,5 @@
 <center>
-  <img src="https://www.canva.com/design/DAGGbtIUOtI/TPx1KLjnJBrEylrXlm35xg/edit?utm_content=DAGGbtIUOtI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" alt="HireAI-logo" align="middle">
+  <img src="https://www.canva.com/design/DAGGbtIUOtI/gHeaDoczjxRMqcqJnQr3lw/view?utm_content=DAGGbtIUOtI&utm_campaign=designshare&utm_medium=link&utm_source=editor" alt="HireAI-logo" align="middle">
   <h2 style="text-align: center;"></h2>
 
 </center>
