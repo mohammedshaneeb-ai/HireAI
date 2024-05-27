@@ -1,6 +1,6 @@
 <center>
-  <img src="https://github.com/Zaheer-10/PaperMate-RecSys/blob/main/PM_Resources/Images/main_banner.png" alt="PaperMate-logo" align="middle">
-  <h2 style="text-align: center;"><pre>Lighter Version of <a href="https://github.com/Zaheer-10/PaperMate-RecSys/tree/main">PaperMate</a></pre></h2>
+  <img src="https://www.canva.com/design/DAGGbtIUOtI/TPx1KLjnJBrEylrXlm35xg/edit?utm_content=DAGGbtIUOtI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" alt="HireAI-logo" align="middle">
+  <h2 style="text-align: center;"></h2>
 
 </center>
 
