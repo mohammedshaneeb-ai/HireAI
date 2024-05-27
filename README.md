@@ -1,3 +1,10 @@
+<center>
+  <img src="https://github.com/Zaheer-10/PaperMate-RecSys/blob/main/PM_Resources/Images/main_banner.png" alt="PaperMate-logo" align="middle">
+  <h2 style="text-align: center;"><pre>Lighter Version of <a href="https://github.com/Zaheer-10/PaperMate-RecSys/tree/main">PaperMate</a></pre></h2>
+
+</center>
+
+
 # Hire AI
 
 Hire AI is a machine learning-based project leveraging Large Language Models (LLMs) to assist both recruiters and job seekers. This project aims to streamline the hiring process by addressing several common challenges on both sides.
