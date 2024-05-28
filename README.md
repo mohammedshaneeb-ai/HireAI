@@ -81,10 +81,10 @@ Hire AI leverages a variety of modern technologies and tools to deliver its feat
 
 ### Machine Learning and AI
 
-- **LangChain**: ![LangChain](https://api.nuget.org/v3-flatcontainer/langchain/0.12.3-dev.64/icon)
-- **LLM (Large Language Models)**: ![LLM](https://s9i7q5a6.rocketcdn.me/wp-content/uploads/llms_800x800.png)
-- **LangSmith**: ![LangSmith](https://img.stackshare.io/service/145590/default_be2a4f8f16c97e8552cef5ba1f17f95600ff5c84.jpg)
-- **Open-Source LLM**: ![Open-Source LLM](https://meetcody.ai/wp-content/uploads/2024/04/Twitter-post-29-1169x597.png)
+- **LangChain**: ![LangChain](images/technologies/langchain.png)
+- **LLM (Large Language Models)**: ![LLM](images/technologies/llm.png)
+- **LangSmith**: ![LangSmith](images/technologies/langsmith.png)
+- **Open-Source LLM**: ![Open-Source LLM](images/technologies/opensource-llm.png)
 - **Mixtral-7b**: ![Mixtral-7b](images/technologies/mixtral-7b.png)
 - **Llama-70b**: ![Llama-70b](images/technologies/llama-70b.png)
 - **Gemini-pro**: ![Gemini-pro](images/technologies/gemini-pro.png)
