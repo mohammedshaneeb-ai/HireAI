@@ -37,6 +37,35 @@ Hire AI is a machine learning-based project leveraging Large Language Models (LL
     - Count the number of applicants.
 2. **Comprehensive Screening**: The system thoroughly reviews all resumes, ensuring good applicants are not overlooked and reducing human error.
 
+## Behind the Scene How Hire AI Works:
+
+<table>
+  <tr>
+    <td align="center">
+      <h2>Resume Extraction</h2>
+      <img src="https://github.com/mohammedshaneeb-ai/bucket/blob/main/hireai/workflow/Resume%20Extraction.png" alt="Paper 1" width="400">
+    </td>
+    <td align="center">
+      <h2>Job Application Process</h2>
+      <img src="https://github.com/mohammedshaneeb-ai/bucket/blob/main/hireai/workflow/Job%20Application%20Proces.png" alt="Paper 2" width="400">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <h2>Job Post Process</h2>
+      <img src="https://github.com/mohammedshaneeb-ai/bucket/blob/main/hireai/workflow/Save%20job%20post.png" alt="Paper 3" width="400">
+    </td>
+    <td align="center">
+      <h2>Short Listing</h2>
+      <img src="https://github.com/mohammedshaneeb-ai/bucket/blob/main/hireai/workflow/Shortlisting.png" alt="Paper 4" width="400">
+    </td>
+  </tr>
+</table>
+
+
+
+
+
 ## Installation
 
 To install and set up Hire AI, follow these steps:
