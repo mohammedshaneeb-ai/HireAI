@@ -40,6 +40,7 @@ Hire AI is a machine learning-based project leveraging Large Language Models (LL
 ## Behind the Scene How Hire AI Works:
 
 <table>
+<h3>Applicant Side</h3>
   <tr>
     <td align="center">
       <h2>Resume Extraction</h2>
@@ -50,13 +51,14 @@ Hire AI is a machine learning-based project leveraging Large Language Models (LL
       <img src="https://github.com/mohammedshaneeb-ai/bucket/blob/main/hireai/workflow/Job%20Application%20Proces.png" alt="Paper 2" width="400">
     </td>
   </tr>
+  <h3>Recruiter Side</h3>
   <tr>
     <td align="center">
       <h2>Job Post Process</h2>
       <img src="https://github.com/mohammedshaneeb-ai/bucket/blob/main/hireai/workflow/Save%20job%20post.png" alt="Paper 3" width="400">
     </td>
     <td align="center">
-      <h2>Short Listing</h2>
+      <h2>Shortlisting</h2>
       <img src="https://github.com/mohammedshaneeb-ai/bucket/blob/main/hireai/workflow/Shortlisting.png" alt="Paper 4" width="400">
     </td>
   </tr>
