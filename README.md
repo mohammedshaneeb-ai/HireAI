@@ -73,31 +73,31 @@ Hire AI leverages a variety of modern technologies and tools to deliver its feat
 
 ### Programming Languages and Frameworks
 
-- **Python**: ![Python](images/technologies/python.png)
-- **Django**: ![Django](images/technologies/django.png)
-- **HTML**: ![HTML](images/technologies/html.png)
-- **CSS**: ![CSS](images/technologies/css.png)
-- **Bootstrap**: ![Bootstrap](images/technologies/bootstrap.png)
+- **Python**
+- **Django**
+- **HTML**
+- **CSS**
+- **Bootstrap**
 
 ### Machine Learning and AI
 
-- **LangChain**: ![LangChain](images/technologies/langchain.png)
-- **LLM (Large Language Models)**: ![LLM](images/technologies/llm.png)
-- **LangSmith**: ![LangSmith](images/technologies/langsmith.png)
-- **Open-Source LLM**: ![Open-Source LLM](images/technologies/opensource-llm.png)
-- **Mixtral-7b**: ![Mixtral-7b](images/technologies/mixtral-7b.png)
-- **Llama-70b**: ![Llama-70b](images/technologies/llama-70b.png)
-- **Gemini-pro**: ![Gemini-pro](images/technologies/gemini-pro.png)
-- **Groq**: ![Groq](images/technologies/groq.png)
+- **LangChain**
+- **LLM (Large Language Models)**
+- **LangSmith**
+- **Open-Source LLM**
+- **Mixtral-7b**
+- **Llama-70b**
+- **Gemini-pro**
+- **Groq**
 
 ### DevOps and Cloud Services
 
-- **Docker**: ![Docker](images/technologies/docker.png)
-- **GitHub Actions**: ![GitHub Actions](images/technologies/github-actions.png)
-- **CI/CD**: ![CI/CD](images/technologies/cicd.png)
-- **AWS EC2**: ![AWS EC2](images/technologies/aws-ec2.png)
-- **AWS ECR**: ![AWS ECR](images/technologies/aws-ecr.png)
-- **Firebase**: ![Firebase](images/technologies/firebase.png)
+- **Docker**
+- **GitHub Actions**
+- **CI/CD**
+- **AWS EC2**
+- **AWS ECR**
+- **Firebase**
 
 
 
