@@ -67,6 +67,38 @@ Hire AI is a machine learning-based project leveraging Large Language Models (LL
   </tr>
 </table>
 
+## Technologies Used
+
+Hire AI leverages a variety of modern technologies and tools to deliver its features efficiently and effectively. Here are some of the key technologies used:
+
+### Programming Languages and Frameworks
+
+- **Python**: ![Python](images/technologies/python.png)
+- **Django**: ![Django](images/technologies/django.png)
+- **HTML**: ![HTML](images/technologies/html.png)
+- **CSS**: ![CSS](images/technologies/css.png)
+- **Bootstrap**: ![Bootstrap](images/technologies/bootstrap.png)
+
+### Machine Learning and AI
+
+- **LangChain**: ![LangChain](https://api.nuget.org/v3-flatcontainer/langchain/0.12.3-dev.64/icon)
+- **LLM (Large Language Models)**: ![LLM](https://s9i7q5a6.rocketcdn.me/wp-content/uploads/llms_800x800.png)
+- **LangSmith**: ![LangSmith](https://img.stackshare.io/service/145590/default_be2a4f8f16c97e8552cef5ba1f17f95600ff5c84.jpg)
+- **Open-Source LLM**: ![Open-Source LLM](https://meetcody.ai/wp-content/uploads/2024/04/Twitter-post-29-1169x597.png)
+- **Mixtral-7b**: ![Mixtral-7b](images/technologies/mixtral-7b.png)
+- **Llama-70b**: ![Llama-70b](images/technologies/llama-70b.png)
+- **Gemini-pro**: ![Gemini-pro](images/technologies/gemini-pro.png)
+- **Groq**: ![Groq](images/technologies/groq.png)
+
+### DevOps and Cloud Services
+
+- **Docker**: ![Docker](images/technologies/docker.png)
+- **GitHub Actions**: ![GitHub Actions](images/technologies/github-actions.png)
+- **CI/CD**: ![CI/CD](images/technologies/cicd.png)
+- **AWS EC2**: ![AWS EC2](images/technologies/aws-ec2.png)
+- **AWS ECR**: ![AWS ECR](images/technologies/aws-ecr.png)
+- **Firebase**: ![Firebase](images/technologies/firebase.png)
+
 
 
 
