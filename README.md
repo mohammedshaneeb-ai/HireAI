@@ -163,3 +163,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, please contact [shaneebkottakkal@gmail.com](mailto:shaneebkottakkal@gmail.com).
 
+## Project Presentation
+
+You can view our detailed project presentation [here](https://docs.google.com/presentation/d/1We7hOgJ8NPqfEZ-XmnJo-XeoCx5Xj8OcF-ZhSW3UHRw/edit?usp=sharing).
